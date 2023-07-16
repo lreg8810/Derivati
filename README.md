@@ -1,5 +1,6 @@
 # Derivati
-Opzioni finanziarie
+
+# Opzioni finanziarie
 In questo documento, ho sviluppato un'analisi dettagliata del pay-off di un'opzione sia dal punto di vista del compratore che del venditore. Inoltre, ho implementato il modello di Black-Scholes, la put-call parity e il modello binomiale per valutare le opzioni.
 Il pay-off di un'opzione è un concetto fondamentale nel trading finanziario, poiché determina il profitto o la perdita che un investitore può ottenere a seguito della negoziazione dell'opzione. Nel contesto di questo file, ho considerato un'opzione finanziaria standard, dove il compratore ha il diritto ma non l'obbligo di acquistare o vendere un determinato asset sottostante a un prezzo prefissato, noto come prezzo di esercizio, entro una data specifica, nota come data di scadenza.
 D'altra parte, ho anche analizzato il pay-off dal punto di vista del venditore dell'opzione. Il venditore, o scrittore, dell'opzione assume un ruolo diverso rispetto al compratore. In base alle condizioni di mercato e al tipo di opzione, il venditore può ottenere un profitto limitato, ma potenzialmente illimitato rischiando di dover fronteggiare ingenti perdite se il prezzo dell'asset sottostante si muove fortemente contro la posizione assunta.
