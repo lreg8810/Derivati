@@ -114,15 +114,58 @@ Il prezzo dell'opzione al giorno odierno (prezzo del giorno zero o prezzo inizia
 
 Una delle formule chiave utilizzate nel modello binomiale per calcolare il valore dell'opzione è la seguente:
 
-\[ V_t = \max(0, p \cdot V_u + (1 - p) \cdot V_d) / (1 + r) \]
+V_t = max(0, p * V_u + (1 - p) * V_d) / (1 + r)
 
 Dove:
-- \( V_t \) è il valore dell'opzione al nodo corrente.
-- \( V_u \) è il valore dell'opzione al nodo successivo in caso di aumento del prezzo dell'attività sottostante.
-- \( V_d \) è il valore dell'opzione al nodo successivo in caso di diminuzione del prezzo dell'attività sottostante.
-- \( p \) è la probabilità di un aumento del prezzo dell'attività sottostante.
-- \( 1 - p \) è la probabilità di una diminuzione del prezzo dell'attività sottostante.
-- \( r \) è il tasso di interesse senza rischio per l'intervallo di tempo considerato.
+V_t è il valore dell'opzione al nodo corrente.
+V_u è il valore dell'opzione al nodo successivo in caso di aumento del prezzo dell'attività sottostante.
+V_d è il valore dell'opzione al nodo successivo in caso di diminuzione del prezzo dell'attività sottostante.
+p è la probabilità di un aumento del prezzo dell'attività sottostante.
+1 - p è la probabilità di una diminuzione del prezzo dell'attività sottostante.
+r è il tasso di interesse senza rischio per l'intervallo di tempo considerato.
 
 Ripetendo questo processo per tutti i nodi dell'albero binomiale, è possibile ottenere il valore dell'opzione al giorno zero, ovvero il suo prezzo attuale nel mercato.
 
+## Modello di Black-Sholes
+
+Il modello di Black-Scholes è una formula matematica utilizzata per stimare il prezzo di un'opzione europea (sia call che put) sul mercato finanziario. La formula prende il nome dai suoi creatori, Fischer Black, Myron Scholes e Robert Merton, ed è stata pubblicata per la prima volta nel 1973.
+
+Il modello di Black-Scholes si basa su alcune importanti assunzioni e considerazioni:
+
+1. Mercato efficiente: Si assume che i mercati siano efficienti, il che significa che non ci sono opportunità di arbitraggio senza rischio.
+
+2. Assenza di costi di transazione: Non ci sono costi di transazione o commissioni nelle negoziazioni.
+
+3. Assenza di dividendi: L'attività sottostante non emette dividendi durante la vita dell'opzione.
+
+4. Movimenti dei prezzi dell'attività sottostante: Si considera che il prezzo dell'attività sottostante segua un processo stocastico geometrico di tipo Browniano.
+
+La formula di Black-Scholes per il prezzo di un'opzione call è:
+
+```
+c = S * N(d1) - X * e^(-r * T) * N(d2)
+```
+
+Dove:
+- `c` è il prezzo dell'opzione call.
+- `S` è il prezzo corrente dell'attività sottostante (ad esempio, azione, indice, ecc.).
+- `N(d1)` è la funzione cumulativa della distribuzione normale standard calcolata utilizzando il valore `d1`.
+- `N(d2)` è la funzione cumulativa della distribuzione normale standard calcolata utilizzando il valore `d2`.
+- `X` è il prezzo di esercizio (strike price) dell'opzione.
+- `r` è il tasso di interesse senza rischio per l'intervallo di tempo fino alla scadenza dell'opzione.
+- `T` è il tempo rimanente fino alla scadenza dell'opzione, espresso in anni.
+- `e` è la costante di Nepero (circa 2.71828), base del logaritmo naturale.
+
+I valori `d1` e `d2` sono calcolati come segue:
+
+```
+d1 = (ln(S / X) + (r + (σ^2) / 2) * T) / (σ * sqrt(T))
+d2 = d1 - σ * sqrt(T)
+```
+
+Dove:
+- `ln` è il logaritmo naturale.
+- `σ` rappresenta la volatilità del prezzo dell'attività sottostante, ovvero la deviazione standard del rendimento dell'attività sottostante.
+- `sqrt(T)` è la radice quadrata del tempo fino alla scadenza.
+
+Il modello di Black-Scholes è molto utilizzato nel mondo finanziario per stimare il prezzo delle opzioni, tuttavia, va notato che il modello è basato su alcune semplificazioni e ipotesi, e può non essere sempre accurato nelle situazioni di mercato più complesse o in presenza di eventi imprevisti. Esistono anche altre varianti e modelli più complessi che tengono conto di diverse considerazioni per migliorare l'accuratezza delle valutazioni delle opzioni.
