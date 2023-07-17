@@ -114,15 +114,17 @@ Il prezzo dell'opzione al giorno odierno (prezzo del giorno zero o prezzo inizia
 
 Una delle formule chiave utilizzate nel modello binomiale per calcolare il valore dell'opzione è la seguente:
 
+```
 V_t = max(0, p * V_u + (1 - p) * V_d) / (1 + r)
+```
 
 Dove:
-V_t è il valore dell'opzione al nodo corrente.
-V_u è il valore dell'opzione al nodo successivo in caso di aumento del prezzo dell'attività sottostante.
-V_d è il valore dell'opzione al nodo successivo in caso di diminuzione del prezzo dell'attività sottostante.
-p è la probabilità di un aumento del prezzo dell'attività sottostante.
-1 - p è la probabilità di una diminuzione del prezzo dell'attività sottostante.
-r è il tasso di interesse senza rischio per l'intervallo di tempo considerato.
+'V_t' è il valore dell'opzione al nodo corrente.
+'V_u' è il valore dell'opzione al nodo successivo in caso di aumento del prezzo dell'attività sottostante.
+'V_d' è il valore dell'opzione al nodo successivo in caso di diminuzione del prezzo dell'attività sottostante.
+'p' è la probabilità di un aumento del prezzo dell'attività sottostante.
+'1 - p' è la probabilità di una diminuzione del prezzo dell'attività sottostante.
+'r' è il tasso di interesse senza rischio per l'intervallo di tempo considerato.
 
 Ripetendo questo processo per tutti i nodi dell'albero binomiale, è possibile ottenere il valore dell'opzione al giorno zero, ovvero il suo prezzo attuale nel mercato.
 
