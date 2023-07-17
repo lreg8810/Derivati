@@ -75,68 +75,12 @@ st > x allorà l’opzione verrà esercitata e il guadagno sarà pari a 𝑆𝑇
 In termini matematici è possibile riscrivere il guadagno dell’holder nel seguente modo:
 
 𝐺(𝑆𝑇) = (
-−𝐾 ; 𝑆𝑇 ≤ 𝑋
+−𝐾 ; 
+𝑆𝑇 ≤ 𝑋
 𝑆𝑇 − 𝑋 − 𝐾 ; 𝑆𝑇 > x )
 
 ![image](https://github.com/lreg8810/Derivati/assets/118115323/0efa3e0d-8d40-463b-95a1-6da25cb7ea42)
 
-
-Quello che si osserva è che l’holder eserciterà l’opzione solo nel caso in cui 𝑆𝑇 > 𝑋 , dal punto di 
-vista grafico la linea rossa rappresenta il guadagno che è negativo inizialmente ma poi diventa 
-positivo, nel tratto rosa, facendo sì che il guadagno diventi una funzione lineare generando un 
-guadagno positivo solo dopo che 𝑆𝑇 superi il valore 𝑋 + 𝐾. 
-Analizzando la posizione del writer si osserva che: 
- Qualora l’holder non esercitasse l’opzione il writer incasserà il premio, linea verde.
- Nel momento in cui 𝑆𝑇 𝑠𝑢𝑝𝑒𝑟𝑎 𝑋 l’holder è chiamato a esercitare e il wiriter perdere tanto 
-più quanto 𝑆𝑇 è grande e quindi illimitata (tratto giallo).
-Nello specifico possiamo osservare come: 
- L’holder avrà un guadagno illimitato ma una perdita limitata 
- Il writer avrà un guadagno limitato e una perdita illimitata, ovviamente esso dovrà coprire la 
-posizione assunta per evitare perdite. 
-14
-Dato che si analizzano delle cifre di denaro in istanti di tempo differenti per ovviare a tale 
-problematica allora è necessario, dal punto di vista finanziario, riscrivere il guadagno, 𝐺′ , utilizzando 
-un tasso 𝑖, ovvero:
-𝐺
-′(𝑆𝑇) = {
-−𝐾 (1 + 𝑖𝑇); 𝑆𝑇 ≤ 𝑋
-𝑆𝑇 − 𝑋 − 𝐾(1 + 𝑖𝑇); 𝑆𝑇 > 𝑋
-La differenza che intercorre tra 𝐺
-′𝑒 𝐺 è che in 𝐺
-′
-si tiene in considerazione dello scarto temporale 
-che intercorre tra 0 𝑒 𝑇.
-Scadenza nel put e guadagno
-Nel put il guadagno sé dato da:
-𝐺(𝑆𝑇) = {
-𝑋 − 𝑆𝑇 − 𝐻 ; 𝑆𝑇 < 𝑋
-−𝐻; 𝑆𝑇 ≥ 𝑋
-L’holder di un put può vendere a 𝑋 quello che sul mercato venderebbe a 𝑆𝑇 , quindi la vendita diretta 
-sul mercato è vantaggiosa rispetto a quella prevista dall’opzione e quindi se:
- 𝑆𝑇 ≥ 𝑋 , l’holder è costretto ad abbandonare il contratto perdendo il premio che per 
-distinguerlo dalla call viene indicato con H
- 𝑆𝑇 < 𝑋 , l’holder eserciterà l’opzione ottenendo il guadagno 𝑋 − 𝑆𝑇 − 𝐻
-La rappresentazione grafica del put è la seguente:
-
-![image](https://github.com/lreg8810/Derivati/assets/118115323/6406e299-be35-47c4-ac2a-b0eb413fd921)
-
-In base al grafico la linea orizzontale verde rappresenta il punto in cui la funzione si spezza, e si 
-osserva che se:
- 𝑆𝑇 > 𝑋 l’holder perde il premio (freccia rossa)
- 𝑆𝑇 < 𝑋 , la funzione è una funzione lineare con coefficiente angolare -1.
-La seguente funzione lineare è bene che venga esercitata solo se 𝑆𝑇 < 𝑋, il guadagno sarà 
-positivo solo se 𝑆𝑇 < 𝑋 − 𝐻 (punto rosa).
-Nel caso del put
- L’holder avrà un guadagno limitato ed anche una perdita. 
-15
- Il writer avrà una perdita limitata con un guadagno limitato. 
-Anche per il put è possibile introdurre la notazione introdotta in precedenza per confrontare il valore 
-di 𝑆𝑡 , con 0 < 𝑡 < 𝑇, confrontandolo con il valore 𝑋 , allora in questo caso la situazione è speculare 
-rispetto a prima e quindi: 
- 𝑆𝑇 < 𝑋 , ci si trova in una situazione in the money in quanto il put mi dà la possibilità di 
-vendere a X quello che sul mercato venderei a meno.
- 𝑆𝑇 = 𝑋 at the money 
- 𝑆𝑇 > 𝑋 out of the money
 
 
 
