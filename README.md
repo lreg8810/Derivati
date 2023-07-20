@@ -170,4 +170,77 @@ Dove:
 - `σ` rappresenta la volatilità del prezzo dell'attività sottostante, ovvero la deviazione standard del rendimento dell'attività sottostante.
 - `sqrt(T)` è la radice quadrata del tempo fino alla scadenza.
 
-Il modello di Black-Scholes è molto utilizzato nel mondo finanziario per stimare il prezzo delle opzioni, tuttavia, va notato che il modello è basato su alcune semplificazioni e ipotesi, e può non essere sempre accurato nelle situazioni di mercato più complesse o in presenza di eventi imprevisti. Esistono anche altre varianti e modelli più complessi che tengono conto di diverse considerazioni per migliorare l'accuratezza delle valutazioni delle opzioni.
+# Futures e Forward
+
+Forward Contract:
+
+Il forward contract (contratto forward) è un accordo personalizzato tra due parti per acquistare o vendere un bene o un'attività finanziaria in futuro a un prezzo specifico concordato al momento della stipula del contratto. Questi contratti sono negoziati privatamente tra le parti coinvolte, spesso tramite banche o istituzioni finanziarie. I principali punti da considerare riguardo ai contratti forward sono:
+
+Personalizzazione: Poiché i contratti forward sono negoziati privatamente, le loro specifiche, come la dimensione del contratto, la data di scadenza e il prezzo concordato, possono essere personalizzate per soddisfare le esigenze specifiche delle parti coinvolte.
+
+Mercato OTC: Il mercato dei contratti forward è noto come mercato over-the-counter (OTC), il che significa che le negoziazioni avvengono al di fuori di un'entità regolamentata.
+
+Rischi di controparte: Nel contratto forward, c'è un rischio di controparte, il che significa che se una delle parti non adempie ai propri obblighi contrattuali, l'altra parte potrebbe incorrere in perdite.
+
+Futures Contract:
+
+Il futures contract (contratto futures) è simile al contratto forward nel senso che rappresenta un accordo per acquistare o vendere un bene o un'attività finanziaria in futuro a un prezzo specifico concordato. Tuttavia, ci sono alcune caratteristiche che rendono i contratti futures diversi dai contratti forward:
+
+Standardizzazione: I contratti futures sono altamente standardizzati, il che significa che hanno dimensioni, date di scadenza e specifiche standardizzate che sono stabilite dalla borsa su cui vengono negoziati.
+
+Mercato Organizzato: I contratti futures vengono negoziati in borse regolamentate, come il Chicago Mercantile Exchange (CME) o l'Intercontinental Exchange (ICE), che fungono da intermediari per le transazioni.
+
+Liquidità: Grazie alla loro standardizzazione e alla negoziazione su borse regolamentate, i contratti futures sono generalmente più liquidi dei contratti forward.
+
+Sistema di Marginazione: Nei contratti futures, i partecipanti devono fornire un margine iniziale come garanzia per coprire eventuali perdite future. Inoltre, il valore della posizione viene valutato giornalmente tramite marking to market, e gli aggiustamenti del margine vengono fatti se necessario.
+
+Rischi di Controparte Ridotti: A causa del sistema di margine e della regolamentazione delle borse, i rischi di controparte sono ridotti nei contratti futures.
+
+In sintesi, mentre sia i contratti forward che i contratti futures permettono agli investitori di coprire il rischio o speculare sui movimenti dei prezzi in futuro, i contratti futures sono più standardizzati, negoziati su borse regolamentate, e presentano un sistema di margine e liquidazione giornaliera, il che li rende più accessibili e convenienti per molti partecipanti al mercato rispetto ai contratti forward personalizzati e negoziati privatamente.
+
+## calcolo del prezzo forward o prezzo dei futures
+Per il calcolo del prezzo forward o prezzo dei futures (F0) sulla base del prezzo spot corrente dell'attività sottostante (S0), il tasso di interesse privo di rischio (r) e la scadenza del contratto in anni (T). La formula è espressa come:
+
+F0 = S0 × e^(r⋅T)
+
+Dove:
+
+F0 è il prezzo forward o prezzo dei futures. S0 è il prezzo spot corrente dell'attività sottostante. e è la base del logaritmo naturale (costante di Nepero, approssimativamente 2.71828). r è il tasso di interesse privo di rischio. T è la scadenza del contratto espressa in anni.
+
+
+## Valore dei contratti
+I forward quando vengono negoziati hanno un valore nullo e successivamente potranno avere un valore positivo o negativo e adottando la metodologia vista in precedenza si osservi che:
+
+𝑓 = (𝐹0 − 𝑋) ∗ 𝑒^(−𝑟𝑇)
+
+dove:
+
+𝑓 rappresenta il valore corrente della posizione lunga del contratto forward con prezzo di consegna 𝑋.
+
+𝐹0 è il prezzo forward negoziato inizialmente, che viene posto uguale al prezzo di consegna 𝑋 al momento della negoziazione del contratto.
+
+𝑋 è il prezzo di consegna del contratto forward, che rimane inalterato nel tempo.
+
+𝑟 è il tasso di interesse privo di rischio valido per la scadenza del contratto.
+
+𝑇 è il periodo di tempo fino alla scadenza del contratto, espresso in anni.
+
+L'equazione descrive come il valore della posizione lunga (f) cambia nel tempo in base alle variazioni del prezzo forward (F0) rispetto al prezzo di consegna (X) e al tasso di interesse (r).
+
+Quando il prezzo futures cambia, il guadagno/perdita sui futures viene calcolato ∆𝑝𝑟𝑒𝑧𝑧𝑜 ∗ 𝑑𝑖𝑚𝑒𝑛𝑠𝑖𝑜𝑛𝑒 𝑑𝑒𝑙 𝑐𝑜𝑛𝑡𝑟𝑎𝑡𝑡𝑜 Il guadagno/perdita vengono contabilizzati immediatamente dato che i futures vengono liquidati giornalmente
+
+## marking to market
+Il "marking to market"  della clearing house è un processo critico utilizzato per valutare e regolare le posizioni dei partecipanti ai mercati finanziari, in particolare nei contratti futures e opzioni. Una clearing house è un'entità che agisce come intermediario tra le parti coinvolte in tali contratti, fornendo servizi di compensazione e garanzia, svolge le seguenti funzioni:
+
+1. **Valutazione giornaliera delle posizioni:** Ogni giorno, la clearing house valuta il valore corrente delle posizioni di ciascun partecipante in base ai prezzi di mercato correnti. Questo prezzo di mercato è noto come "prezzo di liquidazione" o "prezzo di chiusura".
+
+2. **Regolazione dei margini:** Dopo aver valutato le posizioni, la clearing house aggiorna i margini richiesti dai partecipanti. Il margine è un deposito iniziale richiesto per garantire l'adempimento degli obblighi contrattuali e coprire eventuali perdite future. La clearing house può richiedere ai partecipanti di fornire ulteriori fondi (chiamati "margine aggiuntivo" o "margine di variazione") se il valore delle loro posizioni scende al di sotto dei livelli minimi richiesti.
+
+3. **Liquidazione delle perdite e dei guadagni:** Se una posizione subisce perdite, il partecipante deve fornire i fondi necessari per coprire tali perdite. D'altra parte, se una posizione guadagna, i profitti vengono accreditati sul conto del partecipante. Questo processo di regolazione giornaliera continua finché la posizione non viene chiusa o scade.
+
+4. **Riduzione del rischio di controparte:** La clearing house agisce come controparte centrale per tutti i partecipanti, riducendo il rischio di controparte. Se un partecipante non adempie ai propri obblighi, la clearing house assume la responsabilità dell'adempimento e si assicura che gli altri partecipanti non subiscano perdite significative.
+
+5. **Garanzia dell'integrità del mercato:** Il processo di marking to market aiuta a mantenere l'integrità del mercato finanziario, garantendo che tutte le parti rispettino gli obblighi contrattuali e fornendo trasparenza nei valori delle posizioni.
+
+
+
