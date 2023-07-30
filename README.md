@@ -1,6 +1,6 @@
 # Derivati
 
-# Opzioni finanziarie
+# Opzioni finanziarie e futures
 Le opzioni vengono negoziate sia in borsa sia nei mercati over the counter. Esistono due tipi di 
 opzioni: 
 -Call, danno diritto al portatore di comprare un’attività entro una certa data per un certo 
